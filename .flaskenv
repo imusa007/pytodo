@@ -1,0 +1,2 @@
+FLASK_APP=pytodo.py
+FLASK_ENV=development
