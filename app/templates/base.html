@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<div class="container">
+  <form action="add" method="post">
+    <input type="text" name="title" autofocus placeholder="Add Task">
+    <input type="submit" value="Add Task">
+  </form>
+  <div class="taskes">
+      {% for todo in todo_list %}
+      <div class="task">
+            {{loop.index}} {{todo.title}}
+            <a href="/delete/{{ todo.id }}" class="btn">Delete</a>
+        </div>
+      {% endfor %}
+  </div>
+</div>
+</body>
+</html>
